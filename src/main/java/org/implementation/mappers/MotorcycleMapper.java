@@ -2,8 +2,12 @@ package org.implementation.mappers;
 
 import org.implementation.Motorcycle;
 import org.implementation.Owner;
+import org.implementation.gateways.DBConnection;
 import org.implementation.gateways.VehicleGateway;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.LinkedList;
 
 public class MotorcycleMapper implements VehicleMapper<Motorcycle> {
@@ -37,16 +41,19 @@ public class MotorcycleMapper implements VehicleMapper<Motorcycle> {
 
     @Override
     public void create(Motorcycle obj) {
-
+        VehicleGateway vehicleGateway = new VehicleGateway();
+        obj.vehicleId = vehicleGateway.create(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, null, obj.category);
     }
 
     @Override
     public void update(Motorcycle obj) {
-
+        VehicleGateway vehicleGateway = new VehicleGateway();
+        vehicleGateway.update(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, null, obj.category);
     }
 
     @Override
     public void delete(Motorcycle obj) {
-
+        VehicleGateway vehicleGateway = new VehicleGateway();
+        vehicleGateway.delete(obj.vehicleId);
     }
 }

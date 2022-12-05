@@ -37,16 +37,19 @@ public class CarMapper implements VehicleMapper<Car> {
 
     @Override
     public void create(Car obj) {
-
+        VehicleGateway vehicleGateway = new VehicleGateway();
+        obj.vehicleId = vehicleGateway.create(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, obj.carryWeight, null);
     }
 
     @Override
     public void update(Car obj) {
-
+        VehicleGateway vehicleGateway = new VehicleGateway();
+        vehicleGateway.update(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, obj.carryWeight, null);
     }
 
     @Override
     public void delete(Car obj) {
-
+        VehicleGateway vehicleGateway = new VehicleGateway();
+        vehicleGateway.delete(obj.vehicleId);
     }
 }
