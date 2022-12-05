@@ -2,12 +2,7 @@ package org.implementation.mappers;
 
 import org.implementation.Motorcycle;
 import org.implementation.Owner;
-import org.implementation.gateways.DBConnection;
 import org.implementation.gateways.VehicleGateway;
-
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.LinkedList;
 
 public class MotorcycleMapper implements VehicleMapper<Motorcycle> {

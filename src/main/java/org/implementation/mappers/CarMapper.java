@@ -1,7 +1,6 @@
 package org.implementation.mappers;
 
 import org.implementation.Car;
-import org.implementation.Motorcycle;
 import org.implementation.Owner;
 import org.implementation.gateways.VehicleGateway;
 

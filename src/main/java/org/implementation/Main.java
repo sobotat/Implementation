@@ -19,7 +19,13 @@ public class Main {
         System.out.println(car.toString());
         System.out.println(motorcycle.toString() + "\n");
 
-        Owner owner = new OwnerMapper().find(1);
+        // Owner Mapper
+        OwnerMapper ownerMapper = new OwnerMapper();
+        Owner owner = new Owner(0, "Marek");
+        ownerMapper.create(owner);
+        owner.name = "Petr";
+        ownerMapper.update(owner);
+        System.out.println(owner);
 
         // Car Mapper
         CarMapper carMapper = new CarMapper();
@@ -41,7 +47,9 @@ public class Main {
         System.out.println(motorcycle2);
         motorcycleMapper.delete(motorcycle2);
 
-        System.out.println("End");
+        ownerMapper.delete(owner);
+
+        System.out.println("\nEnd");
         DBConnection.close();
     }
 }
