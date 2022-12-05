@@ -2,7 +2,7 @@ package org.implementation.mappers;
 
 import org.implementation.Car;
 import org.implementation.Owner;
-import org.implementation.gateways.VehicleGateway;
+import gateways.VehicleGateway;
 
 import java.util.LinkedList;
 

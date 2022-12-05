@@ -1,4 +1,4 @@
-package org.implementation.gateways;
+package gateways;
 
 import java.sql.*;
 import java.util.LinkedList;

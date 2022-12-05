@@ -1,6 +1,6 @@
 package org.implementation;
 
-import org.implementation.gateways.DBConnection;
+import gateways.DBConnection;
 import org.implementation.mappers.CarMapper;
 import org.implementation.mappers.MotorcycleMapper;
 import org.implementation.mappers.OwnerMapper;

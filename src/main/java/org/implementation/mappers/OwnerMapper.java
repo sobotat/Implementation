@@ -1,7 +1,7 @@
 package org.implementation.mappers;
 
 import org.implementation.Owner;
-import org.implementation.gateways.OwnerGateway;
+import gateways.OwnerGateway;
 
 import java.util.LinkedList;
 
