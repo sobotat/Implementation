@@ -5,7 +5,7 @@ import org.implementation.Owner;
 import gateways.VehicleGateway;
 import java.util.LinkedList;
 
-public class MotorcycleMapper implements VehicleMapper<Motorcycle> {
+public class MotorcycleMapper implements Mapper<Motorcycle> {
 
     @Override
     public Motorcycle find(int id) {
@@ -37,18 +37,18 @@ public class MotorcycleMapper implements VehicleMapper<Motorcycle> {
     @Override
     public void create(Motorcycle obj) {
         VehicleGateway vehicleGateway = new VehicleGateway();
-        obj.vehicleId = vehicleGateway.create(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, null, obj.category);
+        obj.id = vehicleGateway.create(obj.id, obj.name, obj.km, obj.owner.id, obj.type, null, obj.category);
     }
 
     @Override
     public void update(Motorcycle obj) {
         VehicleGateway vehicleGateway = new VehicleGateway();
-        vehicleGateway.update(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, null, obj.category);
+        vehicleGateway.update(obj.id, obj.name, obj.km, obj.owner.id, obj.type, null, obj.category);
     }
 
     @Override
     public void delete(Motorcycle obj) {
         VehicleGateway vehicleGateway = new VehicleGateway();
-        vehicleGateway.delete(obj.vehicleId);
+        vehicleGateway.delete(obj.id);
     }
 }

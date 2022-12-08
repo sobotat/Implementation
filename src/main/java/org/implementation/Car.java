@@ -11,6 +11,6 @@ public class Car extends Vehicle{
 
     @Override
     public String toString(){
-        return "Car: " + vehicleId + " " + name + " ["+ km +"] " + owner + " -> " + carryWeight;
+        return super.toString() + " -> " + carryWeight;
     }
 }

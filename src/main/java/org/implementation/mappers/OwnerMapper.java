@@ -24,18 +24,18 @@ public class OwnerMapper implements Mapper<Owner> {
     @Override
     public void create(Owner obj) {
         OwnerGateway ownerGateway = new OwnerGateway();
-        obj.ownerId = ownerGateway.create(obj.ownerId, obj.name);
+        obj.id = ownerGateway.create(obj.id, obj.name);
     }
 
     @Override
     public void update(Owner obj) {
         OwnerGateway ownerGateway = new OwnerGateway();
-        ownerGateway.update(obj.ownerId, obj.name);
+        ownerGateway.update(obj.id, obj.name);
     }
 
     @Override
     public void delete(Owner obj) {
         OwnerGateway ownerGateway = new OwnerGateway();
-        ownerGateway.delete(obj.ownerId);
+        ownerGateway.delete(obj.id);
     }
 }

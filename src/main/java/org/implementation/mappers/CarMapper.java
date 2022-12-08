@@ -6,7 +6,7 @@ import gateways.VehicleGateway;
 
 import java.util.LinkedList;
 
-public class CarMapper implements VehicleMapper<Car> {
+public class CarMapper implements Mapper<Car> {
 
     @Override
     public Car find(int id) {
@@ -37,18 +37,18 @@ public class CarMapper implements VehicleMapper<Car> {
     @Override
     public void create(Car obj) {
         VehicleGateway vehicleGateway = new VehicleGateway();
-        obj.vehicleId = vehicleGateway.create(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, obj.carryWeight, null);
+        obj.id = vehicleGateway.create(obj.id, obj.name, obj.km, obj.owner.id, obj.type, obj.carryWeight, null);
     }
 
     @Override
     public void update(Car obj) {
         VehicleGateway vehicleGateway = new VehicleGateway();
-        vehicleGateway.update(obj.vehicleId, obj.name, obj.km, obj.owner.ownerId, obj.type, obj.carryWeight, null);
+        vehicleGateway.update(obj.id, obj.name, obj.km, obj.owner.id, obj.type, obj.carryWeight, null);
     }
 
     @Override
     public void delete(Car obj) {
         VehicleGateway vehicleGateway = new VehicleGateway();
-        vehicleGateway.delete(obj.vehicleId);
+        vehicleGateway.delete(obj.id);
     }
 }

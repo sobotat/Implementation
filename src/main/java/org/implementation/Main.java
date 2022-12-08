@@ -4,6 +4,7 @@ import gateways.DBConnection;
 import org.implementation.mappers.CarMapper;
 import org.implementation.mappers.MotorcycleMapper;
 import org.implementation.mappers.OwnerMapper;
+import org.implementation.mappers.VehicleMapper;
 
 /**
  * Tato implementace obsahuje Table Gateway, Single Table Inheritance, Foreign Key Mapping
@@ -33,7 +34,7 @@ public class Main {
         carMapper.create(car2);
         car2.carryWeight = 2500;
         carMapper.update(car2);
-        car2 = carMapper.find(car2.vehicleId);
+        car2 = carMapper.find(car2.id);
         System.out.println(car2);
         carMapper.delete(car2);
 
@@ -43,9 +44,19 @@ public class Main {
         motorcycleMapper.create(motorcycle2);
         motorcycle2.category = "A2";
         motorcycleMapper.update(motorcycle2);
-        motorcycle2 = motorcycleMapper.find(motorcycle2.vehicleId);
+        motorcycle2 = motorcycleMapper.find(motorcycle2.id);
         System.out.println(motorcycle2);
         motorcycleMapper.delete(motorcycle2);
+
+        // Vehicle Mapper
+        VehicleMapper vehicleMapper = new VehicleMapper();
+        Vehicle vehicle = new Vehicle(0, "Airbus", 100000, owner, "Plane");
+        vehicleMapper.create(vehicle);
+        vehicle.km = 50000;
+        vehicleMapper.update(vehicle);
+        vehicle = vehicleMapper.find(vehicle.id);
+        System.out.println(vehicle);
+        vehicleMapper.delete(vehicle);
 
         ownerMapper.delete(owner);
 

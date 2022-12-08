@@ -1,12 +1,11 @@
 package org.implementation;
 
-public class Owner {
+public class Owner extends DomainObject {
 
-    public int ownerId;
     public String name;
 
     public Owner(int ownerId, String name) {
-        this.ownerId = ownerId;
+        super(ownerId);
         this.name = name;
     }
 
